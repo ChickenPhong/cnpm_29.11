@@ -5,7 +5,7 @@ from flask_admin import Admin, BaseView, expose
 from app import app, db
 from flask_admin.contrib.sqla import ModelView
 from flask_login import current_user, logout_user
-from app.models import NhanVien, HocSinh, DanhSachLop, GiaoVienDayHoc, MonHoc, GiaoVien, UserRole, PhongHoc
+from app.models import NhanVien, HocSinh, DanhSachLop, GiaoVienDayHoc, MonHoc, GiaoVien, UserRole, PhongHoc, QuyDinh
 
 admin = Admin(app=app, name='Người Quản Trị', template_mode='bootstrap4')
 
@@ -54,7 +54,20 @@ class GiaoVienView(ModelView):
     # def on
 
 
+class QuiDinhView(ModelView):
+    column_labels = {
+        'min_age': 'Tuổi thấp nhất',
+        'max_age': 'Tuổi cao nhất',
+        'si_so': 'Sĩ số'
+    }
+    can_create = False  # Không cho phép thêm
+    can_delete = False  # Không cho phép xóa
 
+    # Chỉ định các cột hiển thị và chỉnh sửa
+    form_columns = ['min_age', 'max_age', 'si_so']
+    column_list = ['min_age', 'max_age', 'si_so']
+
+admin.add_view(QuiDinhView(QuyDinh, db.session))
 admin.add_view(ModelView(MonHoc, db.session))
 admin.add_view(ModelView(PhongHoc, db.session))
 admin.add_view(ModelView(NhanVien, db.session))

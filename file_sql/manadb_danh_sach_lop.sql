@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `danh_sach_lop`;
 CREATE TABLE `danh_sach_lop` (
   `maDsLop` int NOT NULL AUTO_INCREMENT,
   `idPhongHoc` int DEFAULT NULL,
-  `tenLop` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `khoi` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tenLop` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `khoi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `giaoVienChuNhiem_id` int DEFAULT NULL,
   `siSoHienTai` int NOT NULL,
   `siSo` int NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `danh_sach_lop` (
   CONSTRAINT `danh_sach_lop_ibfk_1` FOREIGN KEY (`idPhongHoc`) REFERENCES `phong_hoc` (`idPhongHoc`),
   CONSTRAINT `danh_sach_lop_ibfk_2` FOREIGN KEY (`giaoVienChuNhiem_id`) REFERENCES `giao_vien` (`idGiaoVien`),
   CONSTRAINT `danh_sach_lop_ibfk_3` FOREIGN KEY (`hocKy_id`) REFERENCES `hoc_ky` (`idHocKy`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `danh_sach_lop` (
 
 LOCK TABLES `danh_sach_lop` WRITE;
 /*!40000 ALTER TABLE `danh_sach_lop` DISABLE KEYS */;
-INSERT INTO `danh_sach_lop` VALUES (10,NULL,'10A1','Khối 10',11,2,2,2,1),(11,NULL,'11A1','Khối 11',10,1,2,2,1),(12,NULL,'12A1','Khối 12',12,1,2,2,1);
+INSERT INTO `danh_sach_lop` VALUES (9,1,'10A1','Khối 10',6,3,3,2,1);
 /*!40000 ALTER TABLE `danh_sach_lop` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-11 12:01:35
+-- Dump completed on 2024-12-20 16:52:42

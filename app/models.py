@@ -199,9 +199,21 @@ class DanhSachLop(db.Model):
     def __str__(self):
         return f"{self.tenLop}"
 
+class QuyDinh(db.Model):
+    idQuyDinh = Column(Integer, primary_key=True, autoincrement=True)
+    min_age = Column(Integer)
+    max_age = Column(Integer)
+    si_so = Column(Integer)
+
+
 if __name__== '__main__':
     with app.app_context():
         db.create_all()
+
+        # quy_dinh_mac_dinh = QuyDinh(min_age=app.config["MIN_AGE"], max_age=app.config["MAX_AGE"],
+        #     si_so=app.config["SI_SO"])
+        # db.session.add(quy_dinh_mac_dinh)
+        # db.session.commit()
 
         # hk1 = HocKy(namHoc="2024-2025", hocKy="1")
         # hk2 = HocKy(namHoc="2024-2025", hocKy="2")
@@ -224,9 +236,7 @@ if __name__== '__main__':
         # db.session.add_all([kh1, kh2, kh3, ph1, ph2, ph3])
         # db.session.commit()
 
-
         # Tạo nhân viên
-
         # nv = NhanVien(
         #     hoTen="Trần Quốc Phong",
         #     gioiTinh=True,

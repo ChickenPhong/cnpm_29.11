@@ -16,28 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `phong_hoc`
+-- Table structure for table `quy_dinh`
 --
 
-DROP TABLE IF EXISTS `phong_hoc`;
+DROP TABLE IF EXISTS `quy_dinh`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `phong_hoc` (
-  `idPhongHoc` int NOT NULL AUTO_INCREMENT,
-  `tenPhong` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`idPhongHoc`),
-  UNIQUE KEY `tenPhong` (`tenPhong`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `quy_dinh` (
+  `idQuyDinh` int NOT NULL AUTO_INCREMENT,
+  `min_age` int DEFAULT NULL,
+  `max_age` int DEFAULT NULL,
+  `si_so` int DEFAULT NULL,
+  PRIMARY KEY (`idQuyDinh`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `phong_hoc`
+-- Dumping data for table `quy_dinh`
 --
 
-LOCK TABLES `phong_hoc` WRITE;
-/*!40000 ALTER TABLE `phong_hoc` DISABLE KEYS */;
-INSERT INTO `phong_hoc` VALUES (1,'A101'),(2,'A102'),(3,'A103'),(4,'A104'),(5,'A105'),(6,'B101'),(7,'B102'),(8,'B103'),(9,'B104'),(10,'B105'),(11,'C101'),(12,'C102'),(13,'C103'),(14,'C104'),(15,'C105');
-/*!40000 ALTER TABLE `phong_hoc` ENABLE KEYS */;
+LOCK TABLES `quy_dinh` WRITE;
+/*!40000 ALTER TABLE `quy_dinh` DISABLE KEYS */;
+INSERT INTO `quy_dinh` VALUES (1,15,20,3);
+/*!40000 ALTER TABLE `quy_dinh` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-12 17:11:52
+-- Dump completed on 2024-12-20 16:52:42

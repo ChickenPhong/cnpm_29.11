@@ -16,27 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `mon_hoc`
+-- Table structure for table `bang_diem_tb`
 --
 
-DROP TABLE IF EXISTS `mon_hoc`;
+DROP TABLE IF EXISTS `bang_diem_tb`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `mon_hoc` (
-  `idMonHoc` int NOT NULL AUTO_INCREMENT,
-  `tenMonHoc` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`idMonHoc`)
+CREATE TABLE `bang_diem_tb` (
+  `idBangDiemTB` int NOT NULL AUTO_INCREMENT,
+  `hocSinh_id` int NOT NULL,
+  `hocKy_id` int NOT NULL,
+  `diem_trung_binh` float NOT NULL,
+  PRIMARY KEY (`idBangDiemTB`),
+  KEY `hocSinh_id` (`hocSinh_id`),
+  KEY `hocKy_id` (`hocKy_id`),
+  CONSTRAINT `bang_diem_tb_ibfk_1` FOREIGN KEY (`hocSinh_id`) REFERENCES `hoc_sinh` (`idHocSinh`),
+  CONSTRAINT `bang_diem_tb_ibfk_2` FOREIGN KEY (`hocKy_id`) REFERENCES `hoc_ky` (`idHocKy`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `mon_hoc`
+-- Dumping data for table `bang_diem_tb`
 --
 
-LOCK TABLES `mon_hoc` WRITE;
-/*!40000 ALTER TABLE `mon_hoc` DISABLE KEYS */;
-INSERT INTO `mon_hoc` VALUES (1,'Toán'),(2,'Văn'),(3,'Anh');
-/*!40000 ALTER TABLE `mon_hoc` ENABLE KEYS */;
+LOCK TABLES `bang_diem_tb` WRITE;
+/*!40000 ALTER TABLE `bang_diem_tb` DISABLE KEYS */;
+INSERT INTO `bang_diem_tb` VALUES (1,1,2,5.89),(2,8,2,7.56),(3,10,2,7.78);
+/*!40000 ALTER TABLE `bang_diem_tb` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-12 17:11:52
+-- Dump completed on 2024-12-20 16:52:43

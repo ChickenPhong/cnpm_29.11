@@ -24,20 +24,20 @@ DROP TABLE IF EXISTS `hoc_sinh`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `hoc_sinh` (
   `idHocSinh` int NOT NULL AUTO_INCREMENT,
-  `hoTen` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hoTen` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `gioiTinh` tinyint(1) NOT NULL,
   `ngaySinh` date NOT NULL,
-  `khoi` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `diaChi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `SDT` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `eMail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `khoi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `diaChi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `SDT` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `eMail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `maDsLop` int DEFAULT NULL,
   PRIMARY KEY (`idHocSinh`),
   UNIQUE KEY `SDT` (`SDT`),
   UNIQUE KEY `eMail` (`eMail`),
   KEY `maDsLop` (`maDsLop`),
   CONSTRAINT `hoc_sinh_ibfk_1` FOREIGN KEY (`maDsLop`) REFERENCES `danh_sach_lop` (`maDsLop`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `hoc_sinh` (
 
 LOCK TABLES `hoc_sinh` WRITE;
 /*!40000 ALTER TABLE `hoc_sinh` DISABLE KEYS */;
-INSERT INTO `hoc_sinh` VALUES (1,'Nguyễn Đăng Khôi',1,'2009-02-01','Khối 10','Thành phố Hồ Chí Minh','0923342943','tqphong2004@gmail.com',10),(2,'Trần Huỳnh Sang',1,'2009-06-02','Khối 10','Thành phố Hồ Chí Minh','0564822166','hsang1@gmail.com',10),(3,'Nguyễn Đăng Đăng',0,'2008-06-05','Khối 11','Hà Nội','0987654310','Tranthanhbaokhanh@gmail.com',11),(4,'Nguyễn Đăng Khôi',1,'2007-09-07','Khối 12','Thành phố Hồ Chí Minh','0987654921','khoi123@gmail.com',12);
+INSERT INTO `hoc_sinh` VALUES (1,'Trần Huỳnh Sá',1,'2009-02-12','Khối 10','Thành phố Hồ Chí Minh','0987654321','hsang1@gmail.com',9),(8,'Tô Quốc Can',1,'2009-01-04','Khối 10','Thành phố Hồ Chí Minh','0987654320','dangad123@gmail.com',9),(10,'Tô Quốc khánh',0,'2009-02-02','Khối 10','Thành phố Hồ Chí Minh','0911322943','Tranthanhbaokhanh@gmail.com',9);
 /*!40000 ALTER TABLE `hoc_sinh` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-11 12:01:34
+-- Dump completed on 2024-12-20 16:52:42

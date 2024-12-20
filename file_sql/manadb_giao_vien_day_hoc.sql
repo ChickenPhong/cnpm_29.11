@@ -31,7 +31,7 @@ CREATE TABLE `giao_vien_day_hoc` (
   KEY `idDsLop` (`idDsLop`),
   CONSTRAINT `giao_vien_day_hoc_ibfk_1` FOREIGN KEY (`idGiaoVien`) REFERENCES `giao_vien` (`idGiaoVien`),
   CONSTRAINT `giao_vien_day_hoc_ibfk_2` FOREIGN KEY (`idDsLop`) REFERENCES `danh_sach_lop` (`maDsLop`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `giao_vien_day_hoc` (
 
 LOCK TABLES `giao_vien_day_hoc` WRITE;
 /*!40000 ALTER TABLE `giao_vien_day_hoc` DISABLE KEYS */;
-INSERT INTO `giao_vien_day_hoc` VALUES (1,11,10),(2,12,10),(3,9,10),(4,10,11),(5,11,11),(6,9,11),(7,12,12),(8,11,12),(9,9,12);
+INSERT INTO `giao_vien_day_hoc` VALUES (19,6,9),(20,9,9),(21,8,9);
 /*!40000 ALTER TABLE `giao_vien_day_hoc` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-11 12:01:35
+-- Dump completed on 2024-12-20 16:52:41

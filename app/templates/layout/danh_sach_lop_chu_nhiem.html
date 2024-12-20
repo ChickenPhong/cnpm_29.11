@@ -182,9 +182,9 @@
                 <tr>
                     <td>{{ hoc_sinh.hoTen }}</td>
                     {% for mon in danh_sach_mon_hoc %}
-                        <td>{{ bang_diem[hoc_sinh.idHocSinh]["15p"].get(mon.tenMonHoc, "") or " " }}</td>
-                        <td>{{ bang_diem[hoc_sinh.idHocSinh]["1_tiet"].get(mon.tenMonHoc, "") or " " }}</td>
-                        <td>{{ bang_diem[hoc_sinh.idHocSinh]["thi"].get(mon.tenMonHoc, "") or " " }}</td>
+                        <td>{{ bang_diem[hoc_sinh.idHocSinh]["15p"].get(mon.tenMonHoc, "") if bang_diem[hoc_sinh.idHocSinh]["15p"].get(mon.tenMonHoc, "") is not none else " " }}</td>
+                        <td>{{ bang_diem[hoc_sinh.idHocSinh]["1_tiet"].get(mon.tenMonHoc, "") if bang_diem[hoc_sinh.idHocSinh]["1_tiet"].get(mon.tenMonHoc, "") is not none else " " }}</td>
+                        <td>{{ bang_diem[hoc_sinh.idHocSinh]["thi"].get(mon.tenMonHoc, "") if bang_diem[hoc_sinh.idHocSinh]["thi"].get(mon.tenMonHoc, "") is not none else " " }}</td>
                     {% endfor %}
                     <td>{{ hoc_sinh.diem_trung_binh if hoc_sinh.diem_trung_binh is not none else " " }}</td>
                     <td>{{ hoc_sinh.xep_loai if hoc_sinh.xep_loai is not none else " " }}</td>
